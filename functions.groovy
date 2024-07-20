@@ -43,7 +43,8 @@ def notifySlack(text, channel, attachments) {
         icon_url: jenkinsIcon,
         attachments: attachments
     ])
-
+    // Escape single quotes in the payload
+    def escapedPayload = payload.replaceAll("'", "\\\\'")
     sh """
         curl -s -X POST ${slackURL} \
         -H 'Cache-Control: no-cache' \
