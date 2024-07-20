@@ -21,7 +21,8 @@ def durationTime(m1, m2) {
 def findPodsFromName(String namespace, String name) {
     podsAndImagesRaw = sh(
         script: """
-            kubectl get pods -n ${namespace} --selector=app=${name} -o jsonpath='{range .items[*]}{.metadata.name}###'
+            kubectl get pods -n production --selector=app=market-review -o jsonpath='{.items[*].metadata.name}'
+
         """,
         returnStdout: true
     ).trim()
