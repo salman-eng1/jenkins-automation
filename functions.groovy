@@ -34,7 +34,7 @@ def findPodsFromName(String namespace, String name) {
 
 def notifySlack(text, channel, attachments) {
     // Get your own slack webhook url and token
-    def slackURL = 'https://hooks.slack.com/services/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'\
+    def slackURL = 'https://hooks.slack.com/services/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'
     def jenkinsIcon = 'https://a.slack-edge.com/205a/img/services/jenkins-ci_72.png'
 
     def payload = JsonOutput.toJson([
